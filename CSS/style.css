@@ -1,0 +1,246 @@
+/* Global stil */
+body {
+    margin-top: 120px; /* Flyttar hela sidan ner så att navbaren inte täcker första sektionen */
+    font-family: Arial, sans-serif;
+  }
+
+  
+  
+  /* Navbar */
+  .navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Tre kolumner */
+    grid-template-rows: auto; /* Automatiska rader */
+    width: 100%;
+    height: 120px; /* Justera höjden */
+    background-color: #fff;
+    border-bottom: 2px solid black; /* Yttre ram runt hela navbaren */
+    box-sizing: border-box;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  /* background-color: rgba(255, 255, 255, 0.9); /* Lätt genomskinlig bakgrund */
+  backdrop-filter: blur(5px); /* Suddar bakgrunden lite för snygg effekt */
+
+  /* Ta bort färgändring för besökta länkar */
+    .navbar a:visited {
+    color: #000; /* Svart även efter klick */
+  }
+  
+  .navbar a {
+    color: #000; /* Svart text */
+    text-decoration: none; /* Ta bort understrykning */
+    font-weight: bold;
+  }
+
+  .navbar a:hover {
+    text-decoration: underline; /* Understrykning vid hovring */
+  }
+
+  
+  /* Gemensam stil för varje box */
+  .navbar div {
+    flex:1;
+    align-content: center; 
+  }
+  
+  /* Vänster kolumn */
+  .navbar .left {
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-right: 2px solid black; /* Streck till höger */
+    height : 100%;
+  }
+  
+  /* Mitten kolumn */
+  .navbar .center {
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-right: 2px solid black; /* Streck till höger */
+    height : 100%;
+  }
+  
+/* Höger kolumn med två rader */
+.navbar .right {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column; /* Två rader */
+    justify-content: space-between; /* Fördelar utrymmet jämnt mellan raderna */
+    height: 100%;
+  }
+  
+  /* Gemensam stil för varje rad i .right */
+  .navbar .right div {
+    display: flex;
+    align-items: center; /* Centrerar texten vertikalt */
+    justify-content: center; /* Centrerar texten horisontellt */
+    height: 50%; /* Varje rad tar upp hälften av höjden */
+    
+  }
+  
+  /* Första raden i höger kolumn */
+  .navbar .right div:first-child {
+    border-bottom: 2px solid black; /* Streck under första raden */
+    
+  }
+
+  section {
+    min-height: 100vh; /* Sektionen fyller minst skärmhöjden */
+    width: 100%;
+    border-left: 2px solid #000000; /* Kantlinje */
+
+    
+    margin: 0; /* Yttre marginal mellan sektionerna */
+    border-bottom: 1px solid #000000; /* Kantlinje */
+    background-color: #f9f9f9; /* Ljusa bakgrunder */
+    box-sizing: border-box; /* Säkerställer att padding inte påverkar bredden */
+  }
+
+
+
+.title {
+    padding-left: 1em;
+    grid-column: 1 / -1;
+    grid-row: 1;
+  
+    font-family: "Prata", serif;
+    font-size: 8vw;
+    width: 100%;
+    z-index: 2;
+  
+    // start
+  
+    > .title-inner {
+      display: inline-block;
+    }
+  }
+  
+  @keyframes text-clip {
+    from {
+      clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    }
+    to {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+  
+  @keyframes outer-left {
+    from {
+      transform: translateX(50%);
+    }
+    to {
+      transform: none;
+    }
+  }
+  
+  @keyframes inner-left {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: none;
+    }
+  }
+  
+  .cafe,
+  .mozart {
+    animation: outer-left 1s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+    // outline: 1px solid red;
+  }
+  
+  // [class*='inner'] {
+  //   outline: 1px solid blue;
+  // }
+  
+  .title-inner {
+    display: inline-block;
+    animation: inner-left 1s 1s ease both;
+  }
+  
+  .cafe-inner {
+    display: inline-block;
+    animation: inner-left 1s 1s ease both,
+      text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+  }
+  
+  .mozart-inner {
+    animation: text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+  }
+  
+  .title {
+    animation: outer-left 1s 1s ease both;
+  }
+  
+  .cafe {
+    // start
+    > .cafe-inner {
+      display: inline-block;
+    }
+  }
+  
+  .mozart {
+    display: inline-block;
+  }
+  .image {
+    grid-row: 1;
+    grid-column: 2;
+    margin-left: -2rem;
+    opacity: 0.7;
+  
+    animation: image-in 1s cubic-bezier(0.5, 0, 0.1, 1) 2s backwards;
+  
+    @keyframes image-in {
+      from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      }
+      to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+  
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  // Replay animation!
+  body:active * {
+    animation: none !important;
+  }
+      
+
+  #language-selector {
+    display: flex;
+    justify-content: center; /* Centrerar knapparna */
+    gap: 10px; /* Mellanrum mellan knappar */
+    margin-top: 20px; /* Avstånd från övrigt innehåll */
+  }
+  
+  #language-selector button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 1px solid black;
+    background-color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  #language-selector button:hover {
+    background-color: #ddd;
+  }
+
+
+  html {
+    scroll-behavior: smooth;
+  }
+  

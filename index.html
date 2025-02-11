@@ -8,17 +8,80 @@
     <title>Document</title>
 </head>
 <body>
-    <nav class="navbar">
-        div class="name">Tord Månström </div>
-        div class="links">
-          <a href="#projekt"></a>
-          >/div>
-        div class="right">
-            <a href="#about">Om mig</a>
-            <a href="#contakt">Kontakt</a>
-        </div> 
+    
+ 
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="left">
+      <a href="#start" data-lang="navbar-left">Tord Månström</a>
+    </div>
+    <div class="center">
+      <a href="#projects" data-lang="navbar-center">Projekt</a>
+    </div>
+    <div class="right">
+      <div class="top">
+        <a href="#about" data-lang="navbar-about">Om mig</a>
+      </div>
+      <div class="bottom">
+        <a href="#contact" data-lang="navbar-contact">Kontakt</a>
+      </div>
+    </div>
+</nav>
 
-        
-    </nav>
+    
+    <!-- Övriga sektioner -->
+     <!-- Animationstest -->
+    <section id="start">
+        <h1 class="animated-text" data-lang="start-text">Jag är Tord</h1>
+
+        <div id="app">
+            <div class="title">
+              <div class="title-inner">
+                <div class="cafe">
+                  <div class="cafe-inner">Hej! Jag</div>
+                </div>
+                <div class="mozart">
+                  <div class="mozart-inner">är Tord Månström</div>
+                </div>
+              </div>
+            </div> 
+          </div>
+    </section>
+    
+
+    
+
+      <!-- Om ming -->
+
+  <section id="about">
+    <h1 data-lang="about-title">Om mig</h1>
+    <p data-lang="about-content">Jag är en passionerad utvecklare som älskar att skapa moderna lösningar.</p>
+  </section>
+  
+  <!-- Projekt -->
+  <section id="projects">
+    <h1 data-lang="projects-title">Projekt</h1>
+    <p data-lang="projects-content">Här är några av mina senaste projekt.</p>
+  </section>
+  
+  <!-- Kontakt -->
+  <section id="contact">
+    <h1 data-lang="contact-title">Kontakt</h1>
+    <p data-lang="contact-phone">Telefon: 070-123-4567</p>
+    <p data-lang="contact-email">E-post: example@email.com</p>
+
+        <div id="language-selector">
+            <button onclick="changeLanguage('sv')">Svenska</button>
+            <button onclick="changeLanguage('en')">English</button>
+            <button onclick="changeLanguage('no')">Norsk</button>
+            <button onclick="changeLanguage('es')">Español</button>
+        </div>
+
+  </section>
+
+  
+  
+    <script defer src="script.js"></script>  
 </body>
 </html>
+    
