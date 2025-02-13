@@ -1,11 +1,46 @@
 /* Global stil */
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
     margin-top: 120px; /* Flyttar hela sidan ner så att navbaren inte täcker första sektionen */
     font-family: Arial, sans-serif;
+    font-size: 18px;
   }
 
-  
-  
+ 
+  /* <main> tar upp all tillgänglig plats och trycker ner #contact */
+main {
+    flex: 1;
+}
+/* Se till att sektionen får plats och inte överlappar */
+#contact {
+    width: 100%;
+    background-color: #f9f9f9; /* Bakgrundsfärg för kontrast */
+    padding: 40px 20px;
+}
+
+section {
+    min-height: 100vh; /* Sektionen fyller minst skärmhöjden */
+    width: 100%;
+    
+    margin: 0; /* Yttre marginal mellan sektionerna */
+    border-bottom: 1px solid #000000; /* Kantlinje */
+    background-color: #f9f9f9; /* Ljusa bakgrunder */
+    box-sizing: border-box; /* Säkerställer att padding inte påverkar bredden */
+  }
+
+
+/* Se till kolla sektioner */
+
+
+   
+    #start {
+    scroll-margin-top: 150px; /* Justera detta värde beroende på navbarens höjd */
+    padding-top: 150px; /* Se till att innehållet syns ordentligt */
+  }
+
   /* Navbar */
   .navbar {
     display: grid;
@@ -91,18 +126,9 @@ body {
     border-bottom: 2px solid black; /* Streck under första raden */
     
   }
+  
 
-  section {
-    min-height: 100vh; /* Sektionen fyller minst skärmhöjden */
-    width: 100%;
-    border-left: 2px solid #000000; /* Kantlinje */
-
-    
-    margin: 0; /* Yttre marginal mellan sektionerna */
-    border-bottom: 1px solid #000000; /* Kantlinje */
-    background-color: #f9f9f9; /* Ljusa bakgrunder */
-    box-sizing: border-box; /* Säkerställer att padding inte påverkar bredden */
-  }
+  
 
 
 
@@ -111,7 +137,7 @@ body {
     grid-column: 1 / -1;
     grid-row: 1;
   
-    font-family: "Prata", serif;
+    font-family: Arial, sans-serif;
     font-size: 8vw;
     width: 100%;
     z-index: 2;
@@ -217,6 +243,42 @@ body {
   body:active * {
     animation: none !important;
   }
+
+
+
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+form label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+form button:hover {
+    background-color: #333;
+}
+
       
 
   #language-selector {
@@ -239,8 +301,28 @@ body {
     background-color: #ddd;
   }
 
+  
+  .footer a {
+    color: black; /* Ändra till önskad färg */
+    text-decoration: none; /* Tar bort understrykning */
+    font-weight: bold;
+}
+
+.footer a:visited {
+    color: black; /* Samma färg för besökta länkar */
+}
+
+.footer a:hover {
+    color: black; /* Färgändring vid hovring (valfri) */
+    text-decoration: underline;
+}
+
+ 
 
   html {
     scroll-behavior: smooth;
   }
   
+
+
+ 
