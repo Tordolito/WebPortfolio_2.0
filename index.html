@@ -26,12 +26,12 @@
         <a href="#contact" data-lang="navbar-contact">Kontakt</a>
       </div>
     </div>
-</nav>
+  </nav>
 
 <main>
     
     <!-- Övriga sektioner -->
-    <section id="hero"> 
+    <section id="start"> 
         <div id="app">
             <div class="title">
                 <div class="title-inner">
@@ -49,9 +49,57 @@
 
 <!-- Projekt -->
 <section id="projects">
-    <h2 data-lang="projects-title">Projekt</h2>
-    <p data-lang="projects-content">Här är några av mina senaste projekt.</p>
+  <h2>Projekt</h2>
+  <div class="project-container">
+      
+      <!-- Tic-Tac-Toe -->
+      <div class="project">
+          <img src="images/tic-tac-toe.png" alt="Tic-Tac-Toe Game">
+          <h3>Tic-Tac-Toe</h3>
+          <p>C#-baserat Tic-Tac-Toe spel.</p>
+          <p><strong>Tekniker:</strong> C#</p>
+          <a href="https://github.com/Tordolito/tic-tac-toe" target="_blank">Se kod på GitHub</a>
+      </div>
+
+      <!-- Snake Game -->
+      <div class="project">
+          <img src="/Images/Snake_C#.png" alt="Snake Game">
+          <h3>Snake</h3>
+          <p>Konsolbaserat Snake-spel byggt med C#.</p>
+          <p><strong>Tekniker:</strong> C#</p>
+          <a href="https://github.com/Tordolito/snake-game" target="_blank">Se kod på GitHub</a>
+      </div>
+
+      <!-- Kassaregister -->
+      <div class="project">
+          <img src="images/cash-register.png" alt="Cash Register">
+          <h3>Kassaregister</h3>
+          <p>Objektorienterat kassaregister i C#.</p>
+          <p><strong>Tekniker:</strong> C#, .NET.</p>
+          <a href="https://github.com/Tordolito/cash-register" target="_blank">Se kod på GitHub</a>
+      </div>
+
+      <!-- Hotellbokning -->
+      <div class="project">
+          <img src="images/hotel-booking.png" alt="Hotel Booking System">
+          <h3>Hotellbokning</h3>
+          <p>Bokningssystem byggt i ASP.NET med en SQL-databas.</p>
+          <p><strong>Tekniker:</strong> C#, och SQL Server</p>
+          <a href="https://github.com/Tordolito/hotel-booking" target="_blank">Se kod på GitHub</a>
+      </div>
+
+      <!-- Zoo Webbsida -->
+      <div class="project">
+          <img src="images/zoo-website.png" alt="Zoo Website">
+          <h3>Zoo Webbsida</h3>
+          <p>Responsiv webbsida om djuren, lekparer och restauranter.</p>
+          <p><strong>Tekniker:</strong> HTML, CSS, JavaScript</p>
+          <a href="https://github.com/Tordolito/zoo-website" target="_blank">Se kod på GitHub</a>
+      </div>
+
+  </div>
 </section>
+
     
 
     <!-- Om mig -->
@@ -123,7 +171,8 @@
         <p>&copy; 2025 Tord Månström | 
             <a href="https://www.linkedin.com/in/tord-m%C3%A5nstr%C3%B6m-6625006a/" target="_blank" data-lang="footer-linkedin">LinkedIn</a>
             | <a href="https://github.com/Tordolito" target="_blank" data-lang="footer-github">GitHub</a>
-            | <a href="/CVs/SE_Tord_Manstrom_CV_Svenska_2025.pdf" download class="btn" data-lang="footer-cv">CV</a>
+            | <a id="cv-link" href="./CVs/SE_Tord_Manstrom_CV_Svenska_2025.pdf" download class="btn" data-lang="footer-cv">CV</a>
+
         </p>
     </div>
     

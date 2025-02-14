@@ -244,3 +244,50 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// Uppdatera CV vid språkbyte
+document.addEventListener("DOMContentLoaded", function () {
+  const cvLinks = {
+      sv: "./CVs/SE_Tord_Manstrom_CV_Svenska_2025.pdf",
+      en: "./CVs/EN_Tord_Manstrom_CV_English_2025.pdf",
+      no: "./CVs/NO_Tord_Manstrom_CV_Norsk_2025.pdf",
+      es: "./CVs/ES_Tord_Manstrom_CV_Castellano_2025.pdf"
+  };
+
+  function updateCVLink(language) {
+      const cvLink = document.getElementById("cv-link");
+      if (cvLinks[language]) {
+          cvLink.href = cvLinks[language];
+      }
+  }
+
+  function changeLanguage(lang) {
+      updateCVLink(lang);
+
+      document.querySelectorAll("[data-lang]").forEach((element) => {
+          const key = element.getAttribute("data-lang");
+          if (translations[lang] && translations[lang][key]) {
+              element.textContent = translations[lang][key];
+          }
+      });
+
+      document.querySelectorAll("[data-lang-placeholder]").forEach((element) => {
+          const key = element.getAttribute("data-lang-placeholder");
+          if (translations[lang] && translations[lang][key]) {
+              element.setAttribute("placeholder", translations[lang][key]);
+          }
+      });
+  }
+
+  // Hämta det första språket (default: svenska)
+  updateCVLink("sv");
+
+  // Lägg till eventlyssnare på språkknappar
+  document.querySelectorAll("[onclick^='changeLanguage']").forEach(button => {
+      button.addEventListener("click", function () {
+          const newLang = this.getAttribute("onclick").match(/'([^']+)'/)[1];
+          changeLanguage(newLang);
+      });
+  });
+});
+
