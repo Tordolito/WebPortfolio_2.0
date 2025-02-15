@@ -15,16 +15,12 @@ main {
     flex: 1;
 }
 /* Se till att sektionen får plats och inte överlappar */
-#contact {
-    width: 100%;
-    background-color: #f9f9f9; /* Bakgrundsfärg för kontrast */
-    padding: 40px 20px;
-}
+
 
 section {
-    min-height: 100vh; /* Sektionen fyller minst skärmhöjden */
+    min-height: 87vh; /* Sektionen fyller minst skärmhöjden */
     width: 100%;
-    
+    padding: 40px 20px;
     margin: 0; /* Yttre marginal mellan sektionerna */
     border-bottom: 1px solid #000000; /* Kantlinje */
     background-color: #f9f9f9; /* Ljusa bakgrunder */
@@ -44,7 +40,7 @@ section {
     grid-template-columns: 1fr 1fr 1fr; /* Tre kolumner */
     grid-template-rows: auto; /* Automatiska rader */
     width: 100%;
-    height: 120px; /* Justera höjden */
+    height: 150px; /* Justera höjden */
     background-color: #fff;
     border-bottom: 2px solid black; /* Yttre ram runt hela navbaren */
     box-sizing: border-box;
@@ -59,7 +55,7 @@ section {
   }
 
   /* background-color: rgba(255, 255, 255, 0.9); /* Lätt genomskinlig bakgrund */
-  backdrop-filter: blur(5px); /* Suddar bakgrunden lite för snygg effekt */
+  /* backdrop-filter: blur(5px); Suddar bakgrunden lite för snygg effekt */
 
   /* Ta bort färgändring för besökta länkar */
     .navbar a:visited {
@@ -87,9 +83,10 @@ section {
   .navbar .left {
     font-size: 1.5rem;
     font-weight: bold;
+    padding-left: 40px; /* Om detta är satt */
     border-right: 2px solid black; /* Streck till höger */
-    height : 100%;
-  }
+    height: 100%;
+}
   
   /* Mitten kolumn */
   .navbar .center {
@@ -124,124 +121,73 @@ section {
     
   }
   
+/* Grundstil för sektionen */
+#start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Fyller hela skärmen */
+  background-color: #f9f9f9;
+  overflow: hidden; /* Förhindra oönskade scroll-effekter */
+}
 
-  
-
-
-
+/* Stil för titeln */
 .title {
-    padding-left: 1em;
-    grid-column: 1 / -1;
-    grid-row: 1;
-  
-    font-family: Arial, sans-serif;
-    font-size: 8vw;
-    width: 100%;
-    z-index: 2;
-  
-    // start
-  
-    > .title-inner {
-      display: inline-block;
-    }
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 8vw;
+  width: 100%;
+  z-index: 2;
+}
+
+/* Text-animationer */
+@keyframes slide-in-left {
+  from {
+      transform: translateX(-100%);
+      opacity: 0;
   }
-  
-  @keyframes text-clip {
-    from {
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes text-reveal {
+  from {
       clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
-    }
-    to {
+  }
+  to {
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
   }
-  
-  @keyframes outer-left {
-    from {
-      transform: translateX(50%);
-    }
-    to {
-      transform: none;
-    }
-  }
-  
-  @keyframes inner-left {
-    from {
-      transform: translateX(-50%);
-    }
-    to {
-      transform: none;
-    }
-  }
-  
-  .cafe,
-  .mozart {
-    animation: outer-left 1s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
-    // outline: 1px solid red;
-  }
-  
-  // [class*='inner'] {
-  //   outline: 1px solid blue;
-  // }
-  
-  .title-inner {
-    display: inline-block;
-    animation: inner-left 1s 1s ease both;
-  }
-  
-  .cafe-inner {
-    display: inline-block;
-    animation: inner-left 1s 1s ease both,
-      text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
-  }
-  
-  .mozart-inner {
-    animation: text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
-  }
-  
-  .title {
-    animation: outer-left 1s 1s ease both;
-  }
-  
-  .cafe {
-    // start
-    > .cafe-inner {
-      display: inline-block;
-    }
-  }
-  
-  .mozart {
-    display: inline-block;
-  }
-  .image {
-    grid-row: 1;
-    grid-column: 2;
-    margin-left: -2rem;
-    opacity: 0.7;
-  
-    animation: image-in 1s cubic-bezier(0.5, 0, 0.1, 1) 2s backwards;
-  
-    @keyframes image-in {
-      from {
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-      }
-      to {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-      }
-    }
-  
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-  }
-  
-  // Replay animation!
-  body:active * {
-    animation: none !important;
-  }
+}
 
+/* Animering för varje textdel */
+.cafe {
+  display: inline-block;
+  animation: slide-in-left 1s ease-out both;
+}
 
+.mozart {
+  display: inline-block;
+  animation: slide-in-right 1s ease-out both;
+}
+
+/* Inre textavslöjning */
+.cafe-inner, .mozart-inner {
+  display: inline-block;
+  animation: text-reveal 1s ease-out both;
+}
 
   form {
     display: flex;
@@ -275,6 +221,20 @@ form button {
 form button:hover {
     background-color: #333;
 }
+/* Centrera alla h2-rubriker */
+h2 {
+  text-align: center; /* Centrera texten */
+  width: 100%; /* Säkerställer att det gäller hela sektionen */
+  margin: 0 auto 40px auto; /* Lägger till luft under rubriken */
+}
+#about h2,
+#projects h2,
+#testimonials h2,
+#contact h2 {
+    text-align: center; /* Centrerad text */
+    width: 100%; /* Tar hela sektionens bredd */
+    margin: 0 auto 50px auto; /* Lägger luft under rubriken */
+}
 
       
 
@@ -298,34 +258,62 @@ form button:hover {
     background-color: #ddd;
   }
 
-  .project-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
+ /* Grundläggande styling för projektdelen */
+#projects {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f9f9f9;
 }
 
+
+
+/* Grid-layout för projekten */
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Anpassar sig beroende på skärmstorlek */
+    gap: 20px; /* Mellanrum mellan boxarna */
+    width: 60%; /* Lämnar ca 20% på vardera sida */
+    margin: 0 auto; /* Centrerar griden */
+    padding: 80px 0;
+}
+
+/* Stil för varje projektbox */
 .project {
-    background: #f9f9f9;
-    border-radius: 10px;
+    background: #ccd1d9; /* Vit bakgrund */
+    border-radius: 10px; /* Mjuka hörn */
     padding: 20px;
     text-align: center;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Lätt skugga */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover-effekt för en stilren känsla */
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling för bilder/logotyper */
 .project img {
-    width: 100%;
-    border-radius: 10px;
+    width: 80px; /* Mindre bildstorlek */
+    height: auto;
+    margin-bottom: 10px;
 }
 
+/* Projektens titel */
 .project h3 {
-    margin-top: 10px;
+    font-size: 1.5rem;
+    margin: 10px 0;
 }
 
+/* Beskrivningstext */
 .project p {
+    font-size: 1rem;
     color: #333;
+    margin: 5px 0;
 }
 
+/* Länk till GitHub */
 .project a {
     display: inline-block;
     margin-top: 10px;
@@ -334,28 +322,228 @@ form button:hover {
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background 0.3s;
 }
 
+/* Hover-effekt på knappen */
 .project a:hover {
     background: #333;
 }
 
-
-  
-  .footer a {
-    color: black; /* Ändra till önskad färg */
-    text-decoration: none; /* Tar bort understrykning */
-    font-weight: bold;
+/* 🔹 Grundläggande styling för sektionen */
+#about {
+  display: flex;
+  flex-direction: column; /* Staplar h2 och boxen */
+  justify-content: flex-start; /* Startar från toppen av sektionen */
+  align-items: center;
+  padding: 100px 0 60px; /* Ökar topp-paddingen för mer utrymme */
+  background-color: #f9f9f9; /* Matchar projektsektionen */
 }
 
-.footer a:visited {
-    color: black; /* Samma färg för besökta länkar */
+
+/* 🔹 Container som håller text och bild */
+.about-container {
+  display: flex;
+  align-items: center;
+  width: 60%; /* Lämnar 20% på varje sida */
+  background: #ccd1d9; /* Ljusblå bakgrund */
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  gap: 30px; /* Mellanrum mellan text och bild */
+}
+
+/* 🔹 Stil för textdelen */
+.about-text {
+  flex: 1;
+  color: #1e3a5f; /* Mörkblå text */
+}
+
+/* 🔹 Stil för texten */
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* 🔹 Stil för bilddelen */
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 250px; /* Anpassar bildstorleken */
+  border-radius: 10px; /* Rundad bild */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Grundläggande styling för sektionen */
+#testimonials {
+  display: flex;
+  flex-direction: column; /* Staplar h2 och boxen */
+  justify-content: flex-start; /* Startar från toppen av sektionen */
+  align-items: center;
+  padding: 100px 0 60px; /* Ökar topp-paddingen för mer utrymme */
+  background-color: #f9f9f9; /* Matchar projektsektionen */
+}
+
+
+/* 🔹 Container som håller text och bild */
+.testimonial-container {
+  display: flex;
+  align-items: center;
+  width: 60%; /* Lämnar 20% på varje sida */
+  background: #ccd1d9; /* Ljusblå bakgrund */
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  gap: 30px; /* Mellanrum mellan text och bild */
+}
+
+/* 🔹 Stil för textdelen */
+.testimonial-text {
+  flex: 1;
+  color: #1e3a5f; /* Mörkblå text */
+}
+
+/* 🔹 Stil för texten */
+.testimonial-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* 🔹 Stil för bilddelen */
+.testimonial-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial-image img {
+  width: 100%;
+  max-width: 250px; /* Anpassar bildstorleken */
+  border-radius: 10%; /* Rundad bild */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Grundläggande styling för kontaktsektionen */
+#contact {
+  display: flex;
+  flex-direction: column; /* Staplar innehållet vertikalt */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+}
+
+/* 🔹 Stil för sektionens rubrik */
+#contact h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: #1e3a5f;
+}
+
+/* 🔹 Stil för formuläret */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%; /* Gör det centrerat och smalt */
+  max-width: 600px; /* Begränsar bredden på stora skärmar */
+  background: #ccd1d9; /* Ljus färg för en snygg look */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 Stil för inputfält och textarea */
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+/* 🔹 Stil för knappen */
+form button {
+  background-color: black;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: #333;
+}
+
+/* 🔹 Språkväljare */
+#language-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#language-selector button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid black;
+  background-color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#language-selector button:hover {
+  background-color: #ddd;
+}
+#language-selector {
+  margin-bottom: 50px; /* Justera värdet efter behov */
+}
+/* Öka avståndet mellan Language Selector och Väder */
+#weather-title {
+  margin-top: 20px; /* Öka avståndet */
+}
+
+/* 🔹 Vädersektionen */
+.weather-data {
+  margin-top: 30px;
+  background: #ddeeff;
+  padding: 15px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* 🔹 Footer */
+.footer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.footer a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .footer a:hover {
-    color: black; /* Färgändring vid hovring (valfri) */
-    text-decoration: underline;
+  text-decoration: underline;
 }
+
+  
+
 
 #start {
   scroll-margin-top: 150px; /* Justera detta värde beroende på navbarens höjd */
@@ -370,4 +558,61 @@ html {
 
 
 
- 
+@media (max-width: 768px) {
+  .project-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 per rad på mindre skärmar */
+  }
+}
+
+@media (max-width: 480px) {
+  .project-container {
+      grid-template-columns: repeat(1, 1fr); /* 1 per rad på mobil */
+  }
+}
+@media (max-width: 1024px) {
+  .about-container {
+      width: 80%; /* Mindre marginal på mindre skärmar */
+      flex-direction: column; /* Staplar text över bild */
+      text-align: center;
+      padding: 30px;
+  }
+
+  .about-image img {
+      max-width: 180px;
+      margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+      width: 90%; /* Tar upp mer av skärmen */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container {
+      width: 95%; /* Nästan hela bredden på mobilen */
+  }
+}
+@media (max-width: 768px) {
+  form {
+      width: 80%; /* Gör formuläret bredare på mobil */
+  }
+
+  #language-selector {
+      flex-wrap: wrap;
+      gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  form {
+      width: 90%; /* Nästan hela skärmen */
+      padding: 30px;
+  }
+
+  #language-selector button {
+      padding: 8px 12px; /* Gör knapparna mindre */
+      font-size: 0.9rem;
+  }
+}
