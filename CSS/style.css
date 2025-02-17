@@ -4,27 +4,29 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
-    margin-top: 120px; /* Flyttar hela sidan ner så att navbaren inte täcker första sektionen */
+    /* margin-top: 120px; Flyttar hela sidan ner så att navbaren inte täcker första sektionen */
     font-family: Arial, sans-serif;
     font-size: 18px;
   }
 
  
   /* <main> tar upp all tillgänglig plats och trycker ner #contact */
-main {
+/* main {
     flex: 1;
-}
+} */
 /* Se till att sektionen får plats och inte överlappar */
 
 
+
 section {
-    min-height: 87vh; /* Sektionen fyller minst skärmhöjden */
+    min-height: 100%; /* Sektionen fyller minst skärmhöjden */
     width: 100%;
-    padding: 40px 20px;
+    /* padding: 20px 20px; */
     margin: 0; /* Yttre marginal mellan sektionerna */
     border-bottom: 1px solid #222222; /* Kantlinje */
     background-color: #FAFAFA; /* Ljusa bakgrunder */
     box-sizing: border-box; /* Säkerställer att padding inte påverkar bredden */
+    /* display: grid; */
   }
 
 
@@ -80,31 +82,37 @@ section {
   }
   
   /* Vänster kolumn */
-  .navbar .left {
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding-left: 40px; /* Om detta är satt */
-    border-right: 2px #222222; /* Streck till höger */
-    height: 100%;
+  /* Fixad navbar med synliga borders */
+.navbar .left {
+  font-size: 2rem;
+  font-weight: bold;
+  padding-left: 40px;
+  border-right: 2px solid #222222; /* Streck till höger */
+  height: 100%;
 }
-  
-  /* Mitten kolumn */
-  .navbar .center {
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-right: 2px #222222; /* Streck till höger */
-    height : 100%;
-  }
-  
+
+.navbar .center {
+  font-size: 2rem;
+  font-weight: bold;
+  border-right: 2px solid #222222; /* Streck till höger */
+  height: 100%;
+}
+
 /* Höger kolumn med två rader */
 .navbar .right {
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: flex;
-    flex-direction: column; /* Två rader */
-    justify-content: space-between; /* Fördelar utrymmet jämnt mellan raderna */
-    height: 100%;
-  }
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Första raden i höger kolumn */
+.navbar .right div:first-child {
+  border-bottom: 2px solid #222222; /* Streck under första raden */
+}
+
   
   /* Gemensam stil för varje rad i .right */
   .navbar .right div {
@@ -115,11 +123,7 @@ section {
     
   }
   
-  /* Första raden i höger kolumn */
-  .navbar .right div:first-child {
-    border-bottom: 2px #222222; /* Streck under första raden */
-    
-  }
+
   
 /* Grundstil för sektionen */
 #start {
@@ -129,7 +133,10 @@ section {
   height: 100vh; /* Fyller hela skärmen */
   background-color: #FAFAFA;
   overflow: hidden; /* Förhindra oönskade scroll-effekter */
+  scroll-margin-top: 150px; /* Justera detta värde beroende på navbarens höjd */
+  padding-top: 150px; /* Se till att innehållet syns ordentligt */
 }
+
 
 /* Stil för titeln */
 .title {
@@ -238,14 +245,14 @@ h2 {
 
       
 
-  #language-selector {
+  /* #language-selector {
     display: flex;
     justify-content: center; /* Centrerar knapparna */
-    gap: 10px; /* Mellanrum mellan knappar */
-    margin-top: 20px; /* Avstånd från övrigt innehåll */
-  }
+    /* gap: 10px; Mellanrum mellan knappar */
+    /* margin-top: 20px; Avstånd från övrigt innehåll 
+  } */
   
-  #language-selector button {
+  /* #language-selector button {
     padding: 10px 15px;
     font-size: 1rem;
     border: 1px #222222;
@@ -256,7 +263,7 @@ h2 {
   
   #language-selector button:hover {
     background-color: #ddd;
-  }
+  } */
 
  /* Grundläggande styling för projektdelen */
 #projects {
@@ -273,14 +280,17 @@ h2 {
     grid-template-columns: repeat(3, 1fr); /* Anpassar sig beroende på skärmstorlek */
     gap: 20px; /* Mellanrum mellan boxarna */
     width: 60%; /* Lämnar ca 20% på vardera sida */
+    align-self: center; /* Centrerar griden vertikalt */
     margin: 0 auto; /* Centrerar griden */
     padding: 80px 0;
+    border: 0px solid #222222; /* Kantlinje runt griden */
 }
 
 /* Stil för varje projektbox */
 .project {
     background: #ccd1d9; /* Vit bakgrund */
     border-radius: 10px; /* Mjuka hörn */
+    min-height: 300px; /* Minsta höjd */
     padding: 20px;
     text-align: center;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Lätt skugga */
@@ -308,7 +318,7 @@ h2 {
 
 /* Beskrivningstext */
 .project p {
-    font-size: 1rem;
+    font-size: 1.25rem;
     color: #333;
     margin: 5px 0;
 }
@@ -318,7 +328,7 @@ h2 {
     display: inline-block;
     margin-top: 10px;
     padding: 8px 12px;
-    background: #222222;
+    background: teal;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -344,14 +354,15 @@ h2 {
 
 /* 🔹 Container som håller text och bild */
 .about-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
   width: 60%; /* Lämnar 20% på varje sida */
   background: #ccd1d9; /* Ljusblå bakgrund */
   border-radius: 15px;
-  padding: 40px;
+  padding: 60px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  gap: 30px; /* Mellanrum mellan text och bild */
+  gap: 10px; /* Mellanrum mellan text och bild */
 }
 
 /* 🔹 Stil för textdelen */
@@ -362,20 +373,23 @@ h2 {
 
 /* 🔹 Stil för texten */
 .about-text p {
-  font-size: 1.2rem;
+  font-size: 2rem;
   line-height: 1.6;
 }
 
 /* 🔹 Stil för bilddelen */
 .about-image {
-  flex: 1;
+  position: relative;
+  top: 3rem;
+  left: -3rem;
+  flex: 1; 
   display: flex;
-  justify-content: center;
+  justify-content: end;
 }
 
 .about-image img {
   width: 100%;
-  max-width: 250px; /* Anpassar bildstorleken */
+  max-width: 400px; /* Anpassar bildstorleken */
   border-radius: 10px; /* Rundad bild */
   box-shadow: 0px 4px 8px #222222;
 }
@@ -445,7 +459,6 @@ h2 {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 30px;
-  text-transform: uppercase;
   color: #333333 ;
 }
 
@@ -466,7 +479,7 @@ form input,
 form textarea {
   width: 100%;
   padding: 10px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   border: 1px solid #ccc;
   border-radius: 0px;
   margin-top: 5px;
@@ -475,13 +488,13 @@ form textarea {
 
 /* 🔹 Stil för knappen */
 form button {
-  background-color: #222222;
+  background-color: teal;
   color: white;
   padding: 12px;
   font-size: 1rem;
   border: none;
   cursor: pointer;
-  border-radius: 0px;
+  border-radius: 5px;
   transition: background 0.3s;
 }
 
@@ -500,8 +513,9 @@ form button:hover {
 #language-selector button {
   padding: 10px 15px;
   font-size: 1rem;
-  border: 1px solid #333333;
-  background-color: white;
+  border-radius: 5px;
+  border: 0px solid #333333;
+  background-color: #ddeeff;
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -510,16 +524,16 @@ form button:hover {
   background-color: #ccd1d9;
 }
 #language-selector {
-  margin-bottom: 50px; /* Justera värdet efter behov */
+  margin-bottom: 35px; /* Justera värdet efter behov */
 }
 /* Öka avståndet mellan Language Selector och Väder */
 #weather-title {
-  margin-top: 20px; /* Öka avståndet */
+  margin-top: 5px; /* Öka avståndet */
 }
 
 /* 🔹 Vädersektionen */
 .weather-data {
-  margin-top: 30px;
+  margin-top: -10px;
   background: #ddeeff;
   padding: 15px;
   border-radius: 8px;
@@ -528,12 +542,12 @@ form button:hover {
 
 /* 🔹 Footer */
 .footer {
-  margin-top: 40px;
+  margin-top: 15px;
   text-align: center;
 }
 
 .footer a {
-  color: #222222#222222;
+  color: #222222;
   text-decoration: none;
   font-weight: bold;
 }
@@ -542,17 +556,9 @@ form button:hover {
   text-decoration: underline;
 }
 
-  
-
-
-#start {
-  scroll-margin-top: 150px; /* Justera detta värde beroende på navbarens höjd */
-  padding-top: 150px; /* Se till att innehållet syns ordentligt */
-}
-
-
 html {
   scroll-behavior: smooth;
+  
 }
 
 
