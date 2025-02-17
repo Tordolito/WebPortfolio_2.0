@@ -22,8 +22,8 @@ section {
     width: 100%;
     padding: 40px 20px;
     margin: 0; /* Yttre marginal mellan sektionerna */
-    border-bottom: 1px solid #000000; /* Kantlinje */
-    background-color: #f9f9f9; /* Ljusa bakgrunder */
+    border-bottom: 1px solid #222222; /* Kantlinje */
+    background-color: #FAFAFA; /* Ljusa bakgrunder */
     box-sizing: border-box; /* Säkerställer att padding inte påverkar bredden */
   }
 
@@ -42,7 +42,7 @@ section {
     width: 100%;
     height: 150px; /* Justera höjden */
     background-color: #fff;
-    border-bottom: 2px solid black; /* Yttre ram runt hela navbaren */
+    border-bottom: 2px solid #222222; /* Yttre ram runt hela navbaren */
     box-sizing: border-box;
     text-align: center;
     align-items: center;
@@ -59,11 +59,11 @@ section {
 
   /* Ta bort färgändring för besökta länkar */
     .navbar a:visited {
-    color: #000; /* Svart även efter klick */
+    color: #222222; /* Svart även efter klick */
   }
   
   .navbar a {
-    color: #000; /* Svart text */
+    color: #222222; /* Svart text */
     text-decoration: none; /* Ta bort understrykning */
     font-weight: bold;
   }
@@ -84,7 +84,7 @@ section {
     font-size: 1.5rem;
     font-weight: bold;
     padding-left: 40px; /* Om detta är satt */
-    border-right: 2px solid black; /* Streck till höger */
+    border-right: 2px #222222; /* Streck till höger */
     height: 100%;
 }
   
@@ -92,7 +92,7 @@ section {
   .navbar .center {
     font-size: 1.5rem;
     font-weight: bold;
-    border-right: 2px solid black; /* Streck till höger */
+    border-right: 2px #222222; /* Streck till höger */
     height : 100%;
   }
   
@@ -117,7 +117,7 @@ section {
   
   /* Första raden i höger kolumn */
   .navbar .right div:first-child {
-    border-bottom: 2px solid black; /* Streck under första raden */
+    border-bottom: 2px #222222; /* Streck under första raden */
     
   }
   
@@ -127,7 +127,7 @@ section {
   justify-content: center;
   align-items: center;
   height: 100vh; /* Fyller hela skärmen */
-  background-color: #f9f9f9;
+  background-color: #FAFAFA;
   overflow: hidden; /* Förhindra oönskade scroll-effekter */
 }
 
@@ -209,7 +209,7 @@ form input, form textarea {
 }
 
 form button {
-    background-color: black;
+    background-color: #222222;
     color: white;
     padding: 10px;
     font-size: 1rem;
@@ -248,7 +248,7 @@ h2 {
   #language-selector button {
     padding: 10px 15px;
     font-size: 1rem;
-    border: 1px solid black;
+    border: 1px #222222;
     background-color: white;
     cursor: pointer;
     transition: background 0.3s;
@@ -262,7 +262,7 @@ h2 {
 #projects {
     text-align: center;
     padding: 50px 0;
-    background-color: #f9f9f9;
+    background-color: #FAFAFA;
 }
 
 
@@ -318,7 +318,7 @@ h2 {
     display: inline-block;
     margin-top: 10px;
     padding: 8px 12px;
-    background: #000;
+    background: #222222;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -328,7 +328,7 @@ h2 {
 
 /* Hover-effekt på knappen */
 .project a:hover {
-    background: #333;
+    background: #333333;
 }
 
 /* 🔹 Grundläggande styling för sektionen */
@@ -338,7 +338,7 @@ h2 {
   justify-content: flex-start; /* Startar från toppen av sektionen */
   align-items: center;
   padding: 100px 0 60px; /* Ökar topp-paddingen för mer utrymme */
-  background-color: #f9f9f9; /* Matchar projektsektionen */
+  background-color: #FAFAFA; /* Matchar projektsektionen */
 }
 
 
@@ -357,7 +357,7 @@ h2 {
 /* 🔹 Stil för textdelen */
 .about-text {
   flex: 1;
-  color: #1e3a5f; /* Mörkblå text */
+  color: #222222; /* Mörkblå text */
 }
 
 /* 🔹 Stil för texten */
@@ -377,7 +377,7 @@ h2 {
   width: 100%;
   max-width: 250px; /* Anpassar bildstorleken */
   border-radius: 10px; /* Rundad bild */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 8px #222222;
 }
 
 /* 🔹 Grundläggande styling för sektionen */
@@ -387,7 +387,7 @@ h2 {
   justify-content: flex-start; /* Startar från toppen av sektionen */
   align-items: center;
   padding: 100px 0 60px; /* Ökar topp-paddingen för mer utrymme */
-  background-color: #f9f9f9; /* Matchar projektsektionen */
+  background-color: #FAFAFA; /* Matchar projektsektionen */
 }
 
 
@@ -422,12 +422,12 @@ h2 {
   justify-content: center;
 }
 
-.testimonial-image img {
+/* .testimonial-image img {
   width: 100%;
-  max-width: 250px; /* Anpassar bildstorleken */
-  border-radius: 10%; /* Rundad bild */
+  max-width: 250px; /* Anpassar bildstorleken *
+  border-radius: 10%; /* Rundad bild *
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
+} */
 
 /* 🔹 Grundläggande styling för kontaktsektionen */
 #contact {
@@ -437,7 +437,7 @@ h2 {
   justify-content: center;
   text-align: center;
   padding: 80px 20px;
-  background-color: #f9f9f9;
+  background-color: #FAFAFA;
 }
 
 /* 🔹 Stil för sektionens rubrik */
@@ -446,7 +446,7 @@ h2 {
   font-size: 2rem;
   margin-bottom: 30px;
   text-transform: uppercase;
-  color: #1e3a5f;
+  color: #333333 ;
 }
 
 /* 🔹 Stil för formuläret */
@@ -468,20 +468,20 @@ form textarea {
   padding: 10px;
   font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 0px;
   margin-top: 5px;
   margin-bottom: 15px;
 }
 
 /* 🔹 Stil för knappen */
 form button {
-  background-color: black;
+  background-color: #222222;
   color: white;
   padding: 12px;
   font-size: 1rem;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 0px;
   transition: background 0.3s;
 }
 
@@ -500,14 +500,14 @@ form button:hover {
 #language-selector button {
   padding: 10px 15px;
   font-size: 1rem;
-  border: 1px solid black;
+  border: 1px solid #333333;
   background-color: white;
   cursor: pointer;
   transition: background 0.3s;
 }
 
 #language-selector button:hover {
-  background-color: #ddd;
+  background-color: #ccd1d9;
 }
 #language-selector {
   margin-bottom: 50px; /* Justera värdet efter behov */
@@ -533,7 +533,7 @@ form button:hover {
 }
 
 .footer a {
-  color: black;
+  color: #222222#222222;
   text-decoration: none;
   font-weight: bold;
 }
