@@ -47,7 +47,19 @@ const translations = {
       "about-hobbies": "Utanför kodningen gillar jag att resa, laga mat och utforska nya platser!",
       "testimonial-text": "\"Tord är en mycket målmedveten, kompetent utvecklare som levererar kvalitativa lösningar.\"",
       "testimonial-author": "Øyvind Lader Bruhn, BYGGFAKTA AS",
-      "skills-title": "Kunskaper"
+      "skills-title": "Kunskaper",
+      "contact-firstname-placeholder": "Ditt förnamn",
+      "contact-lastname-placeholder": "Ditt efternamn",
+      "contact-email-placeholder": "din@email.com",
+      "contact-phone-placeholder": "+46 70 123 45 67",
+      "contact-message-placeholder": "Ditt meddelande",
+      "contact-submit": "Skicka",
+
+      "contact-firstname-error": "Förnamnet måste vara minst 2 tecken.",
+      "contact-lastname-error": "Efternamnet måste vara minst 2 tecken.",
+      "contact-email-error": "Ange en giltig e-postadress.",
+      "contact-phone-error": "Endast siffror och '+' är tillåtna.",
+      "contact-message-error": "Meddelandet måste vara minst 10 tecken."
     },
     en: {
       "hero-text1": "Hi! I",
@@ -96,7 +108,19 @@ const translations = {
       "about-hobbies": "Outside of coding, I enjoy traveling, cooking, and exploring new places!",
       "testimonial-text": "\"Tord is a highly goal-oriented, competent developer who delivers high-quality solutions.\"",
       "testimonial-author": "Øyvind Lader Bruhn, BYGGFAKTA AS",
-      "skills-title": "Skills"
+      "skills-title": "Skills",
+      "contact-firstname-placeholder": "Your first name",
+      "contact-lastname-placeholder": "Your last name",
+      "contact-email-placeholder": "your@email.com",
+      "contact-phone-placeholder": "+44 20 1234 5678",
+      "contact-message-placeholder": "Your message",
+      "contact-submit": "Send",
+
+      "contact-firstname-error": "First name must be at least 2 characters.",
+      "contact-lastname-error": "Last name must be at least 2 characters.",
+      "contact-email-error": "Enter a valid email address.",
+      "contact-phone-error": "Only numbers and '+' are allowed.",
+      "contact-message-error": "Message must be at least 10 characters."
     },
     no: {
       "hero-text1": "Hei! Jeg",
@@ -146,7 +170,18 @@ const translations = {
       "about-hobbies": "Utenfor koding liker jeg å reise, lage mat og utforske nye steder!",
       "testimonial-text": "\"Tord er en svært målrettet, kompetent utvikler som leverer kvalitetsløsninger.\"",
       "testimonial-author": "Øyvind Lader Bruhn, BYGGFAKTA AS",
-      "skills-title": "Ferdigheter"
+      "skills-title": "Ferdigheter",
+      "contact-firstname-placeholder": "Ditt fornavn",
+      "contact-lastname-placeholder": "Ditt etternavn",
+      "contact-email-placeholder": "din@email.com",
+      "contact-phone-placeholder": "+47 123 45 678",
+      "contact-message-placeholder": "Din melding",
+      "contact-submit": "Send",
+      "contact-firstname-error": "Fornavnet må være minst 2 tegn.",
+      "contact-lastname-error": "Etternavnet må være minst 2 tegn.",
+      "contact-email-error": "Skriv inn en gyldig e-postadresse.",
+      "contact-phone-error": "Kun tall og '+' er tillatt.",
+      "contact-message-error": "Meldingen må være minst 10 tegn."
     },
     es: {
       "hero-text1": "¡Hola!",
@@ -196,7 +231,18 @@ const translations = {
       "about-hobbies": "¡Fuera del código, me gusta viajar, cocinar y explorar nuevos lugares!",
       "testimonial-text": "\"Tord es un desarrollador muy enfocado y competente que entrega soluciones de alta calidad.\"",
       "testimonial-author": "Øyvind Lader Bruhn, BYGGFAKTA AS",
-      "skills-title": "Habilidades"
+      "skills-title": "Habilidades",
+      "contact-firstname-placeholder": "Tu nombre",
+      "contact-lastname-placeholder": "Tu apellido",
+      "contact-email-placeholder": "tu@email.com",
+      "contact-phone-placeholder": "+34 612 345 678",
+      "contact-message-placeholder": "Tu mensaje",
+      "contact-submit": "Enviar",
+      "contact-firstname-error": "El nombre debe tener al menos 2 caracteres.",
+      "contact-lastname-error": "El apellido debe tener al menos 2 caracteres.",
+      "contact-email-error": "Introduce una dirección de correo válida.",
+      "contact-phone-error": "Solo se permiten números y '+'.",
+      "contact-message-error": "El mensaje debe tener al menos 10 caracteres."
     },
   };
 
@@ -377,5 +423,63 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
+function validateForm() {
+    let isValid = true;
+
+    // Hämta fält
+    const firstName = document.getElementById("firstName");
+    const lastName = document.getElementById("lastName");
+    const email = document.getElementById("email");
+    const phone = document.getElementById("phone");
+    const message = document.getElementById("message");
+
+    // Hämta felmeddelanden
+    const firstNameError = document.getElementById("firstNameError");
+    const lastNameError = document.getElementById("lastNameError");
+    const emailError = document.getElementById("emailError");
+    const phoneError = document.getElementById("phoneError");
+    const messageError = document.getElementById("messageError");
+
+    // Rensa tidigare felmeddelanden
+    firstNameError.textContent = "";
+    lastNameError.textContent = "";
+    emailError.textContent = "";
+    phoneError.textContent = "";
+    messageError.textContent = "";
+
+    // Validera förnamn (minst 2 tecken)
+    if (firstName.value.trim().length < 2) {
+        firstNameError.textContent = "Förnamnet måste vara minst 2 tecken.";
+        isValid = false;
+    }
+
+    // Validera efternamn (minst 2 tecken)
+    if (lastName.value.trim().length < 2) {
+        lastNameError.textContent = "Efternamnet måste vara minst 2 tecken.";
+        isValid = false;
+    }
+
+    // Validera e-post
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.value.match(emailPattern)) {
+        emailError.textContent = "Ange en giltig e-postadress.";
+        isValid = false;
+    }
+
+    // Validera telefonnummer (endast siffror och +)
+    const phonePattern = /^[0-9+\s]+$/;
+    if (!phone.value.match(phonePattern)) {
+        phoneError.textContent = "Endast siffror och '+' är tillåtna.";
+        isValid = false;
+    }
+
+    // Validera meddelande (minst 10 tecken)
+    if (message.value.trim().length < 10) {
+        messageError.textContent = "Meddelandet måste vara minst 10 tecken.";
+        isValid = false;
+    }
+
+    return isValid; // Om något är fel, stoppas formuläret från att skickas
+}
 
 
