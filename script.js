@@ -46,7 +46,8 @@ const translations = {
       "about-passion": "Jag brinner för att skapa funktionella och användarvänliga lösningar och älskar att experimentera med ny teknik.",
       "about-hobbies": "Utanför kodningen gillar jag att resa, laga mat och utforska nya platser!",
       "testimonial-text": "\"Tord är en mycket målmedveten, kompetent utvecklare som levererar kvalitativa lösningar.\"",
-      "testimonial-author": "Øyvind Lader Bruhn, BYGGFAKTA AS"
+      "testimonial-author": "Øyvind Lader Bruhn, BYGGFAKTA AS",
+      "skills-title": "Kunskaper"
     },
     en: {
       "hero-text1": "Hi! I",
@@ -94,7 +95,8 @@ const translations = {
       "about-passion": "I am passionate about creating functional and user-friendly solutions and love to experiment with new technology.",
       "about-hobbies": "Outside of coding, I enjoy traveling, cooking, and exploring new places!",
       "testimonial-text": "\"Tord is a highly goal-oriented, competent developer who delivers high-quality solutions.\"",
-      "testimonial-author": "Øyvind Lader Bruhn, BYGGFAKTA AS"
+      "testimonial-author": "Øyvind Lader Bruhn, BYGGFAKTA AS",
+      "skills-title": "Skills"
     },
     no: {
       "hero-text1": "Hei! Jeg",
@@ -143,7 +145,8 @@ const translations = {
       "about-passion": "Jeg brenner for å skape funksjonelle og brukervennlige løsninger og elsker å eksperimentere med ny teknologi.",
       "about-hobbies": "Utenfor koding liker jeg å reise, lage mat og utforske nye steder!",
       "testimonial-text": "\"Tord er en svært målrettet, kompetent utvikler som leverer kvalitetsløsninger.\"",
-      "testimonial-author": "Øyvind Lader Bruhn, BYGGFAKTA AS"
+      "testimonial-author": "Øyvind Lader Bruhn, BYGGFAKTA AS",
+      "skills-title": "Ferdigheter"
     },
     es: {
       "hero-text1": "¡Hola!",
@@ -192,7 +195,8 @@ const translations = {
       "about-passion": "Me apasiona crear soluciones funcionales y fáciles de usar, y me encanta experimentar con nuevas tecnologías.",
       "about-hobbies": "¡Fuera del código, me gusta viajar, cocinar y explorar nuevos lugares!",
       "testimonial-text": "\"Tord es un desarrollador muy enfocado y competente que entrega soluciones de alta calidad.\"",
-      "testimonial-author": "Øyvind Lader Bruhn, BYGGFAKTA AS"
+      "testimonial-author": "Øyvind Lader Bruhn, BYGGFAKTA AS",
+      "skills-title": "Habilidades"
     },
   };
 

@@ -244,32 +244,10 @@ h2 {
     margin: 0 auto 50px auto; /* Lägger luft under rubriken */
 }
 
-      
-
-  /* #language-selector {
-    display: flex;
-    justify-content: center; /* Centrerar knapparna */
-    /* gap: 10px; Mellanrum mellan knappar */
-    /* margin-top: 20px; Avstånd från övrigt innehåll 
-  } */
-  
-  /* #language-selector button {
-    padding: 10px 15px;
-    font-size: 1rem;
-    border: 1px #222222;
-    background-color: white;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  #language-selector button:hover {
-    background-color: #ddd;
-  } */
-
  /* Grundläggande styling för projektdelen */
 #projects {
     text-align: center;
-    padding: 50px 0;
+    padding: 100px 0;
     background-color: #FAFAFA;
 }
 
@@ -283,7 +261,7 @@ h2 {
     width: 60%; /* Lämnar ca 20% på vardera sida */
     align-self: center; /* Centrerar griden vertikalt */
     margin: 0 auto; /* Centrerar griden */
-    padding: 80px 0;
+    padding: 50px 0;
     border: 0px solid #222222; /* Kantlinje runt griden */
 }
 
@@ -342,6 +320,41 @@ h2 {
     background: #333333;
 }
 
+#projects h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 50px; /* Avstånd från projektsektionen */
+  margin-bottom: 20px; /* Avstånd till knapparna */
+}
+
+/* Teknologistack placerad under projektboxarna */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 50px; /* Ger extra avstånd från projekten */
+  padding-top: 20px;
+  /* border-top: 2px solid #ddd; Separationslinje mellan projekt och knappar */
+}
+
+/* Styla teknologiknapparna */
+.skill-tag {
+  background: teal; /* Grå bakgrund */
+  color: #222222; /* Svart text */
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 15px; /* Gör knapparna ovala */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover-effekt */
+.skill-tag:hover {
+  transform: scale(1.1);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
 /* 🔹 Grundläggande styling för sektionen */
 #about {
   display: flex;
@@ -362,6 +375,7 @@ h2 {
   background: #ccd1d9; /* Ljusblå bakgrund */
   border-radius: 15px;
   padding: 50px;
+  margin-block: 50px; /* Ökar avståndet mellan sektionerna */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   gap: 10px; /* Mellanrum mellan text och bild */
 }
@@ -451,7 +465,7 @@ h2 {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 80px 20px;
+  padding: 100px 20px;
   background-color: #FAFAFA;
 }
 
@@ -459,7 +473,7 @@ h2 {
 #contact h2 {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   color: #333333 ;
 }
 
@@ -471,6 +485,7 @@ form {
   max-width: 600px; /* Begränsar bredden på stora skärmar */
   background: #ccd1d9; /* Ljus färg för en snygg look */
   padding: 40px;
+  margin-block: 50px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
