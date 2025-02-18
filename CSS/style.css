@@ -571,12 +571,7 @@ form button:hover {
 .footer a:hover {
   text-decoration: underline;
 }
-.error-message {
-  color: red;
-  font-size: 1.1rem;
-  margin-top: 5px;
-  display: block;
-}
+
 
 html {
   scroll-behavior: smooth;

@@ -423,63 +423,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
-function validateForm() {
-    let isValid = true;
 
-    // Hämta fält
-    const firstName = document.getElementById("firstName");
-    const lastName = document.getElementById("lastName");
-    const email = document.getElementById("email");
-    const phone = document.getElementById("phone");
-    const message = document.getElementById("message");
 
-    // Hämta felmeddelanden
-    const firstNameError = document.getElementById("firstNameError");
-    const lastNameError = document.getElementById("lastNameError");
-    const emailError = document.getElementById("emailError");
-    const phoneError = document.getElementById("phoneError");
-    const messageError = document.getElementById("messageError");
 
-    // Rensa tidigare felmeddelanden
-    firstNameError.textContent = "";
-    lastNameError.textContent = "";
-    emailError.textContent = "";
-    phoneError.textContent = "";
-    messageError.textContent = "";
-
-    // Validera förnamn (minst 2 tecken)
-    if (firstName.value.trim().length < 2) {
-        firstNameError.textContent = "Förnamnet måste vara minst 2 tecken.";
-        isValid = false;
-    }
-
-    // Validera efternamn (minst 2 tecken)
-    if (lastName.value.trim().length < 2) {
-        lastNameError.textContent = "Efternamnet måste vara minst 2 tecken.";
-        isValid = false;
-    }
-
-    // Validera e-post
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    if (!email.value.match(emailPattern)) {
-        emailError.textContent = "Ange en giltig e-postadress.";
-        isValid = false;
-    }
-
-    // Validera telefonnummer (endast siffror och +)
-    const phonePattern = /^[0-9+\s]+$/;
-    if (!phone.value.match(phonePattern)) {
-        phoneError.textContent = "Endast siffror och '+' är tillåtna.";
-        isValid = false;
-    }
-
-    // Validera meddelande (minst 10 tecken)
-    if (message.value.trim().length < 10) {
-        messageError.textContent = "Meddelandet måste vara minst 10 tecken.";
-        isValid = false;
-    }
-
-    return isValid; // Om något är fel, stoppas formuläret från att skickas
-}
 
 
