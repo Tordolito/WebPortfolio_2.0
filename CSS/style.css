@@ -361,7 +361,7 @@ h2 {
   width: 60%; /* Lämnar 20% på varje sida */
   background: #ccd1d9; /* Ljusblå bakgrund */
   border-radius: 15px;
-  padding: 60px;
+  padding: 50px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   gap: 10px; /* Mellanrum mellan text och bild */
 }
