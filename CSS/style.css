@@ -256,9 +256,11 @@ h2 {
 /* Grid-layout för projekten */
 .project-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Anpassar sig beroende på skärmstorlek */
-    gap: 50px; /* Mellanrum mellan boxarna */
-    width: 60%; /* Lämnar ca 20% på vardera sida */
+    grid-template-columns: repeat(3, 1fr); /*Anpassar sig beroende på skärmstorlek */
+    /* grid-template-rows: auto 1fr auto; */
+    gap: 60px; /* Mellanrum mellan boxarna */
+    width: 50%; /* Lämnar ca 20% på vardera sida */
+    justify-items: center;
     align-self: center; /* Centrerar griden vertikalt */
     margin: 0 auto; /* Centrerar griden */
     padding: 50px 0;
@@ -269,11 +271,18 @@ h2 {
 .project {
     background: #ccd1d9; /* Vit bakgrund */
     border-radius: 10px; /* Mjuka hörn */
-    min-height: 300px; /* Minsta höjd */
+    min-height: 20rem; /* Minsta höjd */
+    max-width: 20rem;
     padding: 20px;
     text-align: center;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Lätt skugga */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* Lägg till flexbox för att hantera vertikal positionering */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Börja från toppen */
+    align-items: center; /* Centrera innehållet horisontellt */
 }
 
 /* Hover-effekt för en stilren känsla */
@@ -305,7 +314,7 @@ h2 {
 /* Länk till GitHub */
 .project a {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: auto;
     padding: 8px 12px;
     background: teal;
     color: #fff;
@@ -361,7 +370,7 @@ h2 {
   flex-direction: column; /* Staplar h2 och boxen */
   justify-content: flex-start; /* Startar från toppen av sektionen */
   align-items: center;
-  padding: 100px 0 60px; /* Ökar topp-paddingen för mer utrymme */
+  padding: 100px 0 100px; /* Ökar topp-paddingen för mer utrymme */
   background-color: #FAFAFA; /* Matchar projektsektionen */
 }
 
@@ -371,7 +380,7 @@ h2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  width: 60%; /* Lämnar 20% på varje sida */
+  width: 50%; /* Lämnar 20% på varje sida */
   background: #ccd1d9; /* Ljusblå bakgrund */
   border-radius: 15px;
   padding: 50px;
@@ -404,7 +413,7 @@ h2 {
 
 .about-image img {
   width: 100%;
-  max-width: 400px; /* Anpassar bildstorleken */
+  max-width: 300px; /* Anpassar bildstorleken */
   border-radius: 10px; /* Rundad bild */
   box-shadow: 0px 4px 8px #222222;
 }
@@ -435,7 +444,7 @@ h2 {
 /* 🔹 Stil för textdelen */
 .testimonial-text {
   flex: 1;
-  color: #1e3a5f; /* Mörkblå text */
+  color: #333333; 
 }
 
 /* 🔹 Stil för texten */
@@ -444,19 +453,6 @@ h2 {
   line-height: 1.6;
 }
 
-/* 🔹 Stil för bilddelen */
-.testimonial-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-/* .testimonial-image img {
-  width: 100%;
-  max-width: 250px; /* Anpassar bildstorleken *
-  border-radius: 10%; /* Rundad bild *
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-} */
 
 /* 🔹 Grundläggande styling för kontaktsektionen */
 #contact {
