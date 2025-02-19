@@ -257,7 +257,7 @@ h2 {
 .project-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Anpassar sig beroende på skärmstorlek */
-    gap: 20px; /* Mellanrum mellan boxarna */
+    gap: 50px; /* Mellanrum mellan boxarna */
     width: 60%; /* Lämnar ca 20% på vardera sida */
     align-self: center; /* Centrerar griden vertikalt */
     margin: 0 auto; /* Centrerar griden */
@@ -311,7 +311,7 @@ h2 {
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 0.9rem;
+    font-size: 1rem;
     transition: background 0.3s;
 }
 
@@ -341,7 +341,7 @@ h2 {
 /* Styla teknologiknapparna */
 .skill-tag {
   background: teal; /* Grå bakgrund */
-  color: #222222; /* Svart text */
+  color: #fff; /* Svart text */
   font-size: 1rem;
   padding: 10px 20px;
   border-radius: 15px; /* Gör knapparna ovala */

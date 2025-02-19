@@ -146,23 +146,24 @@
   <!-- Kontakt -->
 <section id="contact">
     <h2 data-lang="contact-title">Kontakt</h2>
-    <form action="https://formspree.io/f/mbldygak" method="POST">
-    
+    <!-- <form action="https://formspree.io/f/mbldygak" method="POST"> -->
+    <form action="https://formspree.io/f/mbldygak" method="POST" onsubmit="validateForm(event)">
+
         
         <input type="text" id="firstName" name="firstName" 
                placeholder="Ditt förnamn" 
                data-lang-placeholder="contact-firstname-placeholder" required />
-
+               <span class="error-message" id="error-firstName"></span>
         
         <input type="text" id="lastName" name="lastName" 
                placeholder="Ditt efternamn" 
                data-lang-placeholder="contact-lastname-placeholder" required />
-
+               <span class="error-message" id="error-lastName"></span>
         
         <input type="tel" id="phone" name="phone" 
                placeholder="+46 70 123 45 67" 
                data-lang-placeholder="contact-phone-placeholder" pattern="[0-9+\s]+" required />
-
+               
         
         <input type="text" id="company" name="company" 
                placeholder="Ditt företag" 
@@ -177,12 +178,12 @@
         <input type="email" id="email" name="email" 
                placeholder="din@email.com" 
                data-lang-placeholder="contact-email-placeholder" required />
-
+               <span class="error-message" id="error-email"></span>
         
         <textarea id="message" name="message" 
                   placeholder="Ditt meddelande" 
                   data-lang-placeholder="contact-message-placeholder" required></textarea>
-
+                  <span class="error-message" id="error-message"></span>
         <button type="submit" data-lang="contact-submit">Skicka</button>
     </form>
 

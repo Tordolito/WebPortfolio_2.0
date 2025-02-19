@@ -424,6 +424,90 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+function validateForm(event) {
+    event.preventDefault(); // Förhindrar standard formulärskick
+
+    const lang = document.documentElement.lang || 'sv'; // Kollar aktuell språk
+
+    const errorMessages = {
+        sv: {
+            firstName: "Förnamnet måste vara minst 2 tecken.",
+            lastName: "Efternamnet måste vara minst 2 tecken.",
+            email: "Ange en giltig e-postadress.",
+            message: "Meddelandet måste vara minst 10 tecken."
+        },
+        en: {
+            firstName: "First name must be at least 2 characters.",
+            lastName: "Last name must be at least 2 characters.",
+            email: "Enter a valid email address.",
+            message: "Message must be at least 10 characters."
+        },
+        no: {
+            firstName: "Fornavnet må være minst 2 tegn.",
+            lastName: "Etternavnet må være minst 2 tegn.",
+            email: "Skriv inn en gyldig e-postadresse.",
+            message: "Meldingen må være minst 10 tegn."
+        },
+        es: {
+            firstName: "El nombre debe tener al menos 2 caracteres.",
+            lastName: "El apellido debe tener al menos 2 caracteres.",
+            email: "Introduce una dirección de correo válida.",
+            message: "El mensaje debe tener al menos 10 caracteres."
+        }
+    };
+
+    // Hämta fält
+    const firstName = document.getElementById("firstName");
+    const lastName = document.getElementById("lastName");
+    const email = document.getElementById("email");
+    const message = document.getElementById("message");
+
+    // Hämta felmeddelande-element
+    const errorFirstName = document.getElementById("error-firstName");
+    const errorLastName = document.getElementById("error-lastName");
+    const errorEmail = document.getElementById("error-email");
+    const errorMessage = document.getElementById("error-message");
+
+    let isValid = true;
+
+    // Rensa gamla felmeddelanden
+    errorFirstName.textContent = "";
+    errorLastName.textContent = "";
+    errorEmail.textContent = "";
+    errorMessage.textContent = "";
+
+    // Validera fält
+    if (firstName.value.length < 2) {
+        errorFirstName.textContent = errorMessages[lang].firstName;
+        isValid = false;
+    }
+
+    if (lastName.value.length < 2) {
+        errorLastName.textContent = errorMessages[lang].lastName;
+        isValid = false;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email.value)) {
+        errorEmail.textContent = errorMessages[lang].email;
+        isValid = false;
+    }
+
+    if (message.value.length < 10) {
+        errorMessage.textContent = errorMessages[lang].message;
+        isValid = false;
+    }
+
+    if (isValid) {
+        event.target.submit(); // Skicka formuläret om allt är rätt
+    }
+}
+
+// Uppdatera felmeddelanden vid språkbyte
+function updateErrorMessages(lang) {
+    document.querySelectorAll(".error-message").forEach((span) => (span.textContent = ""));
+}
+updateErrorMessages(lang);
 
 
 
