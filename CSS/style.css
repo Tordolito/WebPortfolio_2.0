@@ -576,46 +576,130 @@ html {
 
 
 
-
-@media (max-width: 768px) {
-  .project-container {
-      grid-template-columns: repeat(2, 1fr); /* 2 per rad på mindre skärmar */
-  }
-}
-
-@media (max-width: 480px) {
-  .project-container {
-      grid-template-columns: repeat(1, 1fr); /* 1 per rad på mobil */
-  }
-}
+/* 📌 För skärmar mellan 1024px och 768px (Tablets & mindre laptops) */
 @media (max-width: 1024px) {
+  /* Anpassa bredden på alla sektioner */
+  #projects, #about, #testimonials, #contact {
+      width: 90%;
+      margin: 0 auto;
+  }
+
+  /* Navbar - stapla på mindre skärmar */
+  .navbar {
+      height: auto;
+      flex-direction: column;
+      padding: 10px 0;
+  }
+
+  .navbar div {
+      border: none;
+      padding: 10px 0;
+  }
+
+  /* Anpassa projekt-layouten */
+  .project-container {
+      grid-template-columns: repeat(2, 1fr); /* Två kolumner */
+      gap: 40px;
+      width: 80%;
+  }
+
   .about-container {
-      width: 80%; /* Mindre marginal på mindre skärmar */
-      flex-direction: column; /* Staplar text över bild */
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      padding: 30px;
   }
 
   .about-image img {
-      max-width: 180px;
-      margin-top: 20px;
+      max-width: 250px;
+      margin-bottom: 20px;
+  }
+
+  .testimonial-container {
+      flex-direction: column;
+      text-align: center;
   }
 }
 
+/* 📌 För skärmar under 768px (Mobil & mindre tablets) */
 @media (max-width: 768px) {
-  .about-container {
-      width: 90%; /* Tar upp mer av skärmen */
+  /* Justera bredden och centrera */
+  #projects, #about, #testimonials, #contact {
+      width: 95%;
+      margin: 0 auto;
   }
-}
 
-@media (max-width: 480px) {
-  .about-container {
-      width: 95%; /* Nästan hela bredden på mobilen */
+  /* Navbar */
+  .navbar {
+      flex-direction: column;
+      height: auto;
   }
-}
-@media (max-width: 768px) {
+
+  .navbar .left,
+  .navbar .center,
+  .navbar .right {
+      border: none;
+      padding: 10px;
+      text-align: center;
+  }
+
+  /* Projekt-layout */
+  .project-container {
+      grid-template-columns: repeat(1, 1fr); /* En kolumn på små skärmar */
+      width: 100%;
+      gap: 40px;
+  }
+
+  .project {
+      width: 100%;
+      min-height: auto;
+      padding: 20px;
+  }
+
+  /* Om mig-sektionen */
+  .about-container {
+      width: 80%;
+      padding: 30px;
+  }
+
+  .about-image {
+      display: none; /* Ta bort bilden på små skärmar */
+  }
+
+  .testimonial-container {
+      width: 100%;
+      padding: 20px;
+  }
+
+  /* Anpassa formulär */
   form {
-      width: 80%; /* Gör formuläret bredare på mobil */
+      width: 70%;
+      padding: 20px;
+  }
+}
+
+/* 📌 För skärmar under 480px (Små mobiler) */
+@media (max-width: 480px) {
+  #projects, #about, #testimonials, #contact {
+      width: 98%;
+  }
+
+  .navbar {
+      font-size: 1rem;
+      padding: 10px 0;
+  }
+
+  .project-container {
+      width: 95%;
+  }
+
+  .project {
+      width: 100%;
+      padding: 15px;
+  }
+
+  form {
+      width: 95%;
+      padding: 15px;
   }
 
   #language-selector {
@@ -624,14 +708,3 @@ html {
   }
 }
 
-@media (max-width: 480px) {
-  form {
-      width: 90%; /* Nästan hela skärmen */
-      padding: 30px;
-  }
-
-  #language-selector button {
-      padding: 8px 12px; /* Gör knapparna mindre */
-      font-size: 0.9rem;
-  }
-}
