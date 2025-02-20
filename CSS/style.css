@@ -568,6 +568,60 @@ form button:hover {
   text-decoration: underline;
 }
 
+/* Stil för flaggknappen */
+.footer-flags {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#show-flags-btn {
+  background-color: teal;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#show-flags-btn:hover {
+  background-color: #333;
+}
+
+/* Flaggrid */
+#pride-flags-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+
+  
+}
+
+
+
+#pride-flags-container img {
+  width: 100px; /* Justera storlek */
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Dölj flaggorna från start */
+#pride-flags-container {
+  display: none; /* Viktigt: detta gömmer flaggorna vid start */
+}
+
+/* När klassen "hidden" är aktiv, ska det döljas */
+.hidden {
+  display: none; /* Forcerar att det döljs */
+}
+
 
 html {
   scroll-behavior: smooth;
@@ -715,3 +769,24 @@ html {
   }
 }
 
+/* För små skärmar (mobil och mindre surfplattor) */
+@media (max-width: 768px) {
+  #pride-flags-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Anpassar sig automatiskt */
+      gap: 5px;
+      padding: 10px;
+  }
+
+  #pride-flags-container img {
+      width: 60px; /* Gör bilderna mindre */
+      height: auto;
+  }
+}
+
+/* För ännu mindre skärmar (exempelvis små mobiler) */
+@media (max-width: 480px) {
+  #pride-flags-container img {
+      width: 50px;
+  }
+}
