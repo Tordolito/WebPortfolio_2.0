@@ -576,7 +576,7 @@ html {
 
 
 
-/* 📌 För skärmar mellan 1024px och 768px (Tablets & mindre laptops) */
+/*För skärmar mellan 1024px och 768px (Tablets & mindre laptops) */
 @media (max-width: 1024px) {
   /* Anpassa bredden på alla sektioner */
   #projects, #about, #testimonials, #contact {
@@ -620,7 +620,7 @@ html {
   }
 }
 
-/* 📌 För skärmar under 768px (Mobil & mindre tablets) */
+/*För skärmar under 768px (Mobil & mindre tablets) */
 @media (max-width: 768px) {
   /* Justera bredden och centrera */
   #projects, #about, #testimonials, #contact {
@@ -677,7 +677,7 @@ html {
   }
 }
 
-/* 📌 För skärmar under 480px (Små mobiler) */
+/* För skärmar under 480px (Små mobiler) */
 @media (max-width: 480px) {
   #projects, #about, #testimonials, #contact {
       width: 98%;
@@ -696,6 +696,13 @@ html {
       width: 100%;
       padding: 15px;
   }
+  /* Om mig-sektionen */
+  .about-container {
+    display:flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 30px;
+}
 
   form {
       width: 95%;
