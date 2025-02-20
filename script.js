@@ -54,12 +54,12 @@ const translations = {
       "contact-phone-placeholder": "+46 70 123 45 67",
       "contact-message-placeholder": "Ditt meddelande",
       "contact-submit": "Skicka",
-
       "contact-firstname-error": "Förnamnet måste vara minst 2 tecken.",
       "contact-lastname-error": "Efternamnet måste vara minst 2 tecken.",
       "contact-email-error": "Ange en giltig e-postadress.",
       "contact-phone-error": "Endast siffror och '+' är tillåtna.",
-      "contact-message-error": "Meddelandet måste vara minst 10 tecken."
+      "contact-message-error": "Meddelandet måste vara minst 10 tecken.",
+      "more-color": "Mer färg"
     },
     en: {
       "hero-text1": "Hi! I",
@@ -115,12 +115,12 @@ const translations = {
       "contact-phone-placeholder": "+44 20 1234 5678",
       "contact-message-placeholder": "Your message",
       "contact-submit": "Send",
-
       "contact-firstname-error": "First name must be at least 2 characters.",
       "contact-lastname-error": "Last name must be at least 2 characters.",
       "contact-email-error": "Enter a valid email address.",
       "contact-phone-error": "Only numbers and '+' are allowed.",
-      "contact-message-error": "Message must be at least 10 characters."
+      "contact-message-error": "Message must be at least 10 characters.",
+      "more-color": "More color",
     },
     no: {
       "hero-text1": "Hei! Jeg",
@@ -181,7 +181,8 @@ const translations = {
       "contact-lastname-error": "Etternavnet må være minst 2 tegn.",
       "contact-email-error": "Skriv inn en gyldig e-postadresse.",
       "contact-phone-error": "Kun tall og '+' er tillatt.",
-      "contact-message-error": "Meldingen må være minst 10 tegn."
+      "contact-message-error": "Meldingen må være minst 10 tegn.",
+      "more-color": "Mer farge",
     },
     es: {
       "hero-text1": "¡Hola!",
@@ -217,7 +218,7 @@ const translations = {
       "contact-phone": "Número de teléfono:",
       "contact-phone-placeholder": "+34 612 345 678",
       "contact-company": "Empresa:",
-      "contact-company-placeholder": "Tu empresa",
+      "contact-company-placeholder": "Su empresa",
       "contact-job": "Título del trabajo:",
       "contact-job-placeholder": "Ej. Desarrollador, Gerente de Proyecto",
       "contact-email": "Correo electrónico:",
@@ -232,17 +233,18 @@ const translations = {
       "testimonial-text": "\"Tord es un desarrollador muy enfocado y competente que entrega soluciones de alta calidad.\"",
       "testimonial-author": "Øyvind Lader Bruhn, BYGGFAKTA AS",
       "skills-title": "Habilidades",
-      "contact-firstname-placeholder": "Tu nombre",
-      "contact-lastname-placeholder": "Tu apellido",
-      "contact-email-placeholder": "tu@email.com",
+      "contact-firstname-placeholder": "Su nombre",
+      "contact-lastname-placeholder": "Su apellido",
+      "contact-email-placeholder": "su@email.com",
       "contact-phone-placeholder": "+34 612 345 678",
-      "contact-message-placeholder": "Tu mensaje",
+      "contact-message-placeholder": "Su mensaje",
       "contact-submit": "Enviar",
       "contact-firstname-error": "El nombre debe tener al menos 2 caracteres.",
       "contact-lastname-error": "El apellido debe tener al menos 2 caracteres.",
       "contact-email-error": "Introduce una dirección de correo válida.",
       "contact-phone-error": "Solo se permiten números y '+'.",
-      "contact-message-error": "El mensaje debe tener al menos 10 caracteres."
+      "contact-message-error": "El mensaje debe tener al menos 10 caracteres.",
+      "more-color": "Más color",
     },
   };
 
@@ -423,6 +425,53 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 });
+
+function changeLanguage(lang) {
+    document.querySelectorAll("[data-lang]").forEach((element) => {
+        const key = element.getAttribute("data-lang");
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+}
+
+ // Hämta fram flaggor)
+
+ document.addEventListener("DOMContentLoaded", function () {
+    const showFlagsBtn = document.getElementById("show-flags-btn");
+    const prideFlagsContainer = document.getElementById("pride-flags-container");
+
+    if (showFlagsBtn && prideFlagsContainer) {
+        // Se till att flaggorna är gömda från början
+        prideFlagsContainer.style.display = "none";
+        prideFlagsContainer.style.opacity = "0"; // Starta osynliga
+        prideFlagsContainer.style.transition = "opacity 0.5s ease-in-out"; // Smooth effekt
+
+        showFlagsBtn.addEventListener("click", function () {
+            if (prideFlagsContainer.style.display === "none") {
+                prideFlagsContainer.style.display = "flex"; // Visa flaggorna
+                setTimeout(() => {
+                    prideFlagsContainer.style.opacity = "1"; // Gör dem synliga med smooth transition
+                }, 10); // Liten delay för att transition ska fungera
+
+                // Scrolla ner efter att flaggorna har visats
+                setTimeout(() => {
+                    prideFlagsContainer.scrollIntoView({ behavior: "smooth", block: "center" });
+                }, 300);
+            } else {
+                prideFlagsContainer.style.opacity = "0"; // Gör dem osynliga
+                setTimeout(() => {
+                    prideFlagsContainer.style.display = "none"; // Göm flaggorna efter transition
+                }, 500); // Vänta på animationen innan display sätts till none
+            }
+        });
+    } else {
+        console.error("Kunde inte hitta flaggknappen eller flaggcontainern.");
+    }
+});
+
+
+
 
 function validateForm(event) {
     event.preventDefault(); // Förhindrar standard formulärskick
