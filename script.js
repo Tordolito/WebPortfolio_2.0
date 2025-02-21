@@ -59,7 +59,8 @@ const translations = {
       "contact-email-error": "Ange en giltig e-postadress.",
       "contact-phone-error": "Endast siffror och '+' är tillåtna.",
       "contact-message-error": "Meddelandet måste vara minst 10 tecken.",
-      "more-color": "Mer färg"
+      "more-color": "Mer färg",
+      "pride-flags-title": "Stöd din omgivning!"
     },
     en: {
       "hero-text1": "Hi! I",
@@ -121,6 +122,7 @@ const translations = {
       "contact-phone-error": "Only numbers and '+' are allowed.",
       "contact-message-error": "Message must be at least 10 characters.",
       "more-color": "More color",
+      "pride-flags-title": "Support your Community!"
     },
     no: {
       "hero-text1": "Hei! Jeg",
@@ -183,6 +185,7 @@ const translations = {
       "contact-phone-error": "Kun tall og '+' er tillatt.",
       "contact-message-error": "Meldingen må være minst 10 tegn.",
       "more-color": "Mer farge",
+      "pride-flags-title": "Støtt ditt miljø!"
     },
     es: {
       "hero-text1": "¡Hola!",
@@ -245,6 +248,7 @@ const translations = {
       "contact-phone-error": "Solo se permiten números y '+'.",
       "contact-message-error": "El mensaje debe tener al menos 10 caracteres.",
       "more-color": "Más color",
+      "pride-flags-title": "Apoya a tu comunidad!"
     },
   };
 
@@ -440,35 +444,38 @@ function changeLanguage(lang) {
  document.addEventListener("DOMContentLoaded", function () {
     const showFlagsBtn = document.getElementById("show-flags-btn");
     const prideFlagsContainer = document.getElementById("pride-flags-container");
+    const prideFlagsTitle = document.querySelector("[data-lang='pride-flags-title']"); // Hämta h2
 
-    if (showFlagsBtn && prideFlagsContainer) {
-        // Se till att flaggorna är gömda från början
+    if (showFlagsBtn && prideFlagsContainer && prideFlagsTitle) {
+        // Se till att flaggorna och h2 är gömda från början
         prideFlagsContainer.style.display = "none";
-        prideFlagsContainer.style.opacity = "0"; // Starta osynliga
-        prideFlagsContainer.style.transition = "opacity 0.5s ease-in-out"; // Smooth effekt
+        prideFlagsContainer.style.opacity = "0"; 
+        prideFlagsContainer.style.transition = "opacity 0.5s ease-in-out";
+        prideFlagsTitle.style.display = "none"; // Göm h2 från början
 
         showFlagsBtn.addEventListener("click", function () {
             if (prideFlagsContainer.style.display === "none") {
-                prideFlagsContainer.style.display = "flex"; // Visa flaggorna
+                prideFlagsContainer.style.display = "flex";
                 setTimeout(() => {
-                    prideFlagsContainer.style.opacity = "1"; // Gör dem synliga med smooth transition
-                }, 10); // Liten delay för att transition ska fungera
-
-                // Scrolla ner efter att flaggorna har visats
+                    prideFlagsContainer.style.opacity = "1";
+                }, 10);
+                prideFlagsTitle.style.display = "block"; // Visa h2 samtidigt
                 setTimeout(() => {
                     prideFlagsContainer.scrollIntoView({ behavior: "smooth", block: "center" });
                 }, 300);
             } else {
-                prideFlagsContainer.style.opacity = "0"; // Gör dem osynliga
+                prideFlagsContainer.style.opacity = "0";
                 setTimeout(() => {
-                    prideFlagsContainer.style.display = "none"; // Göm flaggorna efter transition
-                }, 500); // Vänta på animationen innan display sätts till none
+                    prideFlagsContainer.style.display = "none";
+                    prideFlagsTitle.style.display = "none"; // Dölj h2 när flaggorna göms
+                }, 500);
             }
         });
     } else {
         console.error("Kunde inte hitta flaggknappen eller flaggcontainern.");
     }
 });
+
 
 
 

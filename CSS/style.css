@@ -337,25 +337,33 @@ h2 {
 }
 
 /* Teknologistack placerad under projektboxarna */
+/* Teknologistack placerad under projektboxarna */
 .skills-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
-  margin-top: 50px; /* Ger extra avstånd från projekten */
+  margin-top: 50px;
   padding-top: 20px;
-  /* border-top: 2px solid #ddd; Separationslinje mellan projekt och knappar */
 }
 
 /* Styla teknologiknapparna */
 .skill-tag {
-  background: teal; /* Grå bakgrund */
-  color: #fff; /* Svart text */
+  background: teal;
+  color: #fff;
   font-size: 1rem;
   padding: 10px 20px;
-  border-radius: 15px; /* Gör knapparna ovala */
+  border-radius: 15px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* 🔹 GÖR DEM LIKA STORA */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;  /* Anpassa detta efter behov */
+  height: 40px;      /* Sätt en fast höjd */
+  text-align: center;
 }
 
 /* Hover-effekt */
@@ -363,6 +371,7 @@ h2 {
   transform: scale(1.1);
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
 }
+
 
 /* 🔹 Grundläggande styling för sektionen */
 #about {
@@ -397,7 +406,7 @@ h2 {
 
 /* 🔹 Stil för texten */
 .about-text p {
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1.6;
 }
 
@@ -629,7 +638,12 @@ html {
 }
 
 
-
+@media (max-width: 1500px) {
+  .about-image img {
+      width: 70%; /* Minska bilden lite snabbare */
+      max-width: 450px;
+  }
+}
 /*För skärmar mellan 1024px och 768px (Tablets & mindre laptops) */
 @media (max-width: 1024px) {
   /* Anpassa bredden på alla sektioner */
@@ -663,9 +677,9 @@ html {
       text-align: center;
   }
 
-  .about-image img {
-      max-width: 250px;
-      margin-bottom: 20px;
+    /* Ingen */
+    .about-image {
+      display: none;
   }
 
   .testimonial-container {
@@ -675,6 +689,7 @@ html {
 }
 
 /*För skärmar under 768px (Mobil & mindre tablets) */
+
 @media (max-width: 768px) {
   /* Justera bredden och centrera */
   #projects, #about, #testimonials, #contact {
