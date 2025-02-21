@@ -32,10 +32,10 @@ const translations = {
       "contact-lastname-placeholder": "Ditt efternamn",
       "contact-phone": "Telefonnummer:",
       "contact-phone-placeholder": "+46 70 123 45 67",
-      "contact-company": "Företag:",
-      "contact-company-placeholder": "Ditt företag",
-      "contact-job": "Yrkesroll:",
-      "contact-job-placeholder": "Ex. Utvecklare, Projektledare",
+    //   "contact-company": "Företag:",
+    //   "contact-company-placeholder": "Ditt företag",
+    //   "contact-job": "Yrkesroll:",
+    //   "contact-job-placeholder": "Ex. Utvecklare, Projektledare",
       "contact-email": "E-post:",
       "contact-email-placeholder": "din@email.com",
       "contact-message": "Meddelande:",
@@ -94,10 +94,10 @@ const translations = {
       "contact-lastname-placeholder": "Your last name",
       "contact-phone": "Phone Number:",
       "contact-phone-placeholder": "+44 20 1234 5678",
-      "contact-company": "Company:",
-      "contact-company-placeholder": "Your company",
-      "contact-job": "Job Title:",
-      "contact-job-placeholder": "e.g. Developer, Project Manager",
+    //   "contact-company": "Company:",
+    //   "contact-company-placeholder": "Your company",
+    //   "contact-job": "Job Title:",
+    //   "contact-job-placeholder": "e.g. Developer, Project Manager",
       "contact-email": "Email:",
       "contact-email-placeholder": "your@email.com",
       "contact-message": "Message:",
@@ -157,10 +157,10 @@ const translations = {
       "contact-lastname-placeholder": "Ditt etternavn",
       "contact-phone": "Telefonnummer:",
       "contact-phone-placeholder": "+47 123 45 678",
-      "contact-company": "Firma:",
-      "contact-company-placeholder": "Ditt firma",
-      "contact-job": "Yrkesrolle:",
-      "contact-job-placeholder": "F.eks. Utvikler, Prosjektleder",
+    //   "contact-company": "Firma:",
+    //   "contact-company-placeholder": "Ditt firma",
+    //   "contact-job": "Yrkesrolle:",
+    //   "contact-job-placeholder": "F.eks. Utvikler, Prosjektleder",
       "contact-email": "E-post:",
       "contact-email-placeholder": "din@email.com",
       "contact-message": "Melding:",
@@ -220,10 +220,10 @@ const translations = {
       "contact-lastname-placeholder": "Tu apellido",
       "contact-phone": "Número de teléfono:",
       "contact-phone-placeholder": "+34 612 345 678",
-      "contact-company": "Empresa:",
-      "contact-company-placeholder": "Su empresa",
-      "contact-job": "Título del trabajo:",
-      "contact-job-placeholder": "Ej. Desarrollador, Gerente de Proyecto",
+    //   "contact-company": "Empresa:",
+    //   "contact-company-placeholder": "Su empresa",
+    //   "contact-job": "Título del trabajo:",
+    //   "contact-job-placeholder": "Ej. Desarrollador, Gerente de Proyecto",
       "contact-email": "Correo electrónico:",
       "contact-email-placeholder": "tu@email.com",
       "contact-message": "Mensaje:",
@@ -549,7 +549,7 @@ function validateForm(event) {
         isValid = false;
     }
 
-    if (message.value.length < 10) {
+    if (message.value.length > 0 && message.value.length < 10) {
         errorMessage.textContent = errorMessages[lang].message;
         isValid = false;
     }
