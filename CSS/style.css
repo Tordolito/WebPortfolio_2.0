@@ -316,7 +316,7 @@ h2 {
     display: inline-block;
     margin-top: auto;
     padding: 8px 12px;
-    background: teal;
+    background: rgb(85, 85, 85);
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -349,7 +349,7 @@ h2 {
 
 /* Styla teknologiknapparna */
 .skill-tag {
-  background: teal;
+  background: rgb(85, 85, 85);
   color: #fff;
   font-size: 1rem;
   padding: 10px 20px;
@@ -383,12 +383,11 @@ h2 {
   background-color: #FAFAFA; /* Matchar projektsektionen */
 }
 
-
 /* 🔹 Container som håller text och bild */
 .about-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  align-items: center;
+  align-items: flex-start; /* Alignar texten med överkanten av bilden */
   width: 50%; /* Lämnar 20% på varje sida */
   background: #ccd1d9; /* Ljusblå bakgrund */
   border-radius: 15px;
@@ -413,11 +412,10 @@ h2 {
 /* 🔹 Stil för bilddelen */
 .about-image {
   position: relative;
-  top: 3rem;
-  left: -3rem;
   flex: 1; 
   display: flex;
   justify-content: end;
+  align-self: flex-start; /* Justera bilden till toppen */
 }
 
 .about-image img {
@@ -426,6 +424,7 @@ h2 {
   border-radius: 10px; /* Rundad bild */
   box-shadow: 0px 4px 8px #222222;
 }
+
 
 /* 🔹 Grundläggande styling för sektionen */
 #testimonials {
@@ -441,7 +440,7 @@ h2 {
 /* 🔹 Container som håller text och bild */
 .testimonial-container {
   display: flex;
-  align-items: center;
+  align-items: flex-end; /* Alignar texten med botten av bilden */
   width: 60%; /* Lämnar 20% på varje sida */
   background: #ccd1d9; /* Ljusblå bakgrund */
   border-radius: 15px;
@@ -458,8 +457,10 @@ h2 {
 
 /* 🔹 Stil för texten */
 .testimonial-text p {
+  font-style: italic !important; /* Kursiv text */
   font-size: 1.2rem;
   line-height: 1.6;
+  
 }
 
 
@@ -500,6 +501,7 @@ form input,
 form textarea {
   width: 100%;
   padding: 10px;
+  font-family: Arial, sans-serif;
   font-size: 1.5rem;
   border: 1px solid #ccc;
   border-radius: 0px;
@@ -509,7 +511,7 @@ form textarea {
 
 /* 🔹 Stil för knappen */
 form button {
-  background-color: teal;
+  background-color: rgb(85, 85, 85);
   color: white;
   padding: 12px;
   font-size: 1rem;
@@ -584,7 +586,7 @@ form button:hover {
 }
 
 #show-flags-btn {
-  background-color: teal;
+  background-color: rgb(85, 85, 85);
   color: white;
   font-size: 1rem;
   padding: 10px 15px;

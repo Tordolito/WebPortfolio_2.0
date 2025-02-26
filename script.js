@@ -60,7 +60,7 @@ const translations = {
       "contact-phone-error": "Endast siffror och '+' är tillåtna.",
       "contact-message-error": "Meddelandet måste vara minst 10 tecken.",
       "more-color": "Mer färg",
-      "pride-flags-title": "Stöd din omgivning!"
+      "pride-flags-title": "Stöd din färgglada omgivning!"
     },
     en: {
       "hero-text1": "Hi! I",
@@ -122,7 +122,7 @@ const translations = {
       "contact-phone-error": "Only numbers and '+' are allowed.",
       "contact-message-error": "Message must be at least 10 characters.",
       "more-color": "More color",
-      "pride-flags-title": "Support your Community!"
+      "pride-flags-title": "Support your colorful community!"
     },
     no: {
       "hero-text1": "Hei! Jeg",
@@ -185,7 +185,7 @@ const translations = {
       "contact-phone-error": "Kun tall og '+' er tillatt.",
       "contact-message-error": "Meldingen må være minst 10 tegn.",
       "more-color": "Mer farge",
-      "pride-flags-title": "Støtt ditt miljø!"
+      "pride-flags-title": "Støtt ditt fargerike miljø!"
     },
     es: {
       "hero-text1": "¡Hola!",
@@ -248,7 +248,7 @@ const translations = {
       "contact-phone-error": "Solo se permiten números y '+'.",
       "contact-message-error": "El mensaje debe tener al menos 10 caracteres.",
       "more-color": "Más color",
-      "pride-flags-title": "Apoya a tu comunidad!"
+      "pride-flags-title": "Apoya a tu comunidad colorida!"
     },
   };
 
