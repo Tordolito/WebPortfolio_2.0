@@ -47,6 +47,6 @@ git clone https://github.com/Tordolito/utvecklarportfolio.git
 📜 Licens
 Detta projekt är licensierat under MIT License - fritt att använda och modifiera!
 ________________________________________
-https://github.com/Tordolito/WebPortfolio_2.0
+https://tordolito.github.io/WebPortfolio_2.0/
 💡 Tack för att du besöker min portfölj!
 
